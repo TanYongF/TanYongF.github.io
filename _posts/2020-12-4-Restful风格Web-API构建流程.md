@@ -2,7 +2,7 @@
 layout:     post
 title:      Restful风格Web API构建流程
 subtitle:   一套属于自己的脚手架。
-date:       2020-12-4
+date:       2021-12-4
 author:     BY, Tanyongfeng 
 header-img: img/post-bg-re-vs-ng2.jpg
 catalog: true
