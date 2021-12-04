@@ -14,7 +14,7 @@ tags:
 
 # Restful风格Web API构建流程
 
-## 零、技术栈：
+## 1.技术栈
 
 |   框架类型   |    框架名称     |
 | :----------: | :-------------: |
@@ -25,9 +25,9 @@ tags:
 |   渲染引擎   |    Thymeleaf    |
 | 权限控制框架 | Spring Security |
 
-## 一、编写Restful风格接口类
+## 2.编写Restful风格接口类
 
-### 1.添加ResponseUtil类（用来返回Resuful风格Json数据）
+### 2.1 添加ResponseUtil类（用来返回Resuful风格Json数据）
 
 ```java
 /**
@@ -44,7 +44,7 @@ public class ResponseUtil {
 }
 ```
 
-### 2.添加`ResultEnum`枚举类（用来返回服务状态）
+### 2.2添加`ResultEnum`枚举类（用来返回服务状态）
 
 ```java
 /**
@@ -66,7 +66,7 @@ public enum ResultEnum {
 } 
 ```
 
-### 2.添加`RestResult`类（Restful风格返回体）
+### 2.3添加`RestResult`类（Restful风格返回体）
 
 ```java
 @Data
@@ -132,9 +132,9 @@ public class RestResult<T> {
 
 
 
-## 二、 引入相关依赖以及配置基本环境
+## 3. 引入相关依赖以及配置基本环境
 
-### 1. 编辑Maven配置文件`pom.xml`
+### 3.1 编辑Maven配置文件`pom.xml`
 
 - 添加父文件项目约束
 
@@ -215,7 +215,7 @@ public class RestResult<T> {
       </dependencies>
   ```
 
-### 2. 配置项目配置文件`application.yml`
+### 3.2 配置项目配置文件`application.yml`
 
 ```yaml
 spring:
@@ -235,9 +235,9 @@ server:
   port: 8083				#配置端口号
 ```
 
-### 3.（可选）配置SpringSecurity
+### 3.3（可选）配置SpringSecurity
 
-#### 3.1 配置文件
+#### 3.3.1 配置文件
 
 ```java
 /**
@@ -295,7 +295,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
 }
 ```
 
-#### 3.2 自定义Detail接口
+#### 3.3.2 自定义Detail接口
 
 ```java
 /**
@@ -346,7 +346,7 @@ public class TeacherDetail extends Teacher implements UserDetails{
 
 ```
 
-#### 3.3 实现UserDetailService接口
+#### 3.3.3 实现UserDetailService接口
 
 ```java
 /**
@@ -403,17 +403,15 @@ public class WebMvcConfigurerAdapter implements WebMvcConfigurer {
 }
 ```
 
-
-
-## 末、开始编写
+## 5.开始编写
 
 1. Mapper
 2. Service
 3. Controller
 
-## 附：
+## 附录
 
-### 目录结构
+### 1.目录结构
 
 ```asp
 │  StudentMannagerSystemApplication.java
